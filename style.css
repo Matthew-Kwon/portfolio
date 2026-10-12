@@ -101,3 +101,43 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-wrap: balance;
 }
+
+main section h2 {
+    color: var(--color-accent);
+    border-bottom: 1px solid oklch(80% 3% 200);
+    padding-bottom: 0.2em;
+    margin-top: 2em;
+}
+
+main article {
+    margin-block: 1.5em;
+}
+
+main article h3 {
+    margin: 0;
+}
+
+main article header p {
+    margin: 0.25em 0 0;
+    color: oklch(45% 3% 200);
+    font-size: 90%;
+}
+
+main ul {
+    padding-left: 1.2em;
+}
+
+main li {
+    margin-block: 0.5em;
+}
+
+main header img {
+    display: block;
+    margin-block: 0.75em;
+    max-width: 100%;
+    height: auto;
+}
+
+main a {
+    color: var(--color-accent);
+}
