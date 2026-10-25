@@ -80,6 +80,8 @@ form button {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    /* title / image / description — fixed image row so large PNGs can't blow the grid */
+    grid-auto-rows: auto 12em auto;
     gap: 1em;
 }
 
@@ -150,8 +152,7 @@ main a {
 .projects img {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
     object-position: top center;
     display: block;
