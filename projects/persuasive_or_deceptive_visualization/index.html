@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script type="module" src="../../global.js"></script>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Hyungwoo Kwon</strong> — <em>hyk089@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>
+        Proposition: Developing economies, not advanced economies, should
+        now bear the main responsibility for cutting greenhouse gas emissions.
+      </h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img
+            src="fig1_total_emissions.png"
+            alt="Total GHG emissions over time for World, Emerging and Developing Economies, Advanced Economies, and G7"
+          />
+          <figcaption>
+            Total GHG emissions (excl. LULUCF). Emerging and developing
+            economies show steep growth while advanced economies stay flat or
+            decline—supporting the claim that developing economies should now
+            lead emission cuts.
+          </figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <strong>Score: −1.5.</strong> Plot <em>total</em> emissions instead of per-capita. 
+            Emerging and developing economies include far more countries and people, so their totals are inevitably larger. 
+            This framing makes their rapid growth dominate the chart while advanced economies look flat—persuasive for the proposition, 
+            but it hides differences in emissions intensity per person.
+          </li>
+          <li>
+            <strong>Score: −1.</strong> Group many countries into “Emerging and Developing Economies” versus “Advanced Economies” / G7. 
+            Aggregation emphasizes the developing-world growth story and downplays heterogeneity within each group (e.g. China vs. low emitters).
+          </li>
+          <li>
+            <strong>Score: 1.</strong> Keep a long time axis from ~1970 countiuous with a clear zero baseline and readable legend. 
+            The encoding itself is conventional and easy to read; most of the persuasion comes from which quantity we chose to show, not from broken scales.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img
+            src="fig3_per_capita.png"
+            alt="GHG emissions per capita over time for selected countries and the world"
+          />
+          <figcaption>
+            GHG emissions per capita (excl. LULUCF). After normalizing by population, advanced economies—especially the United States—still emit far more per person than developing countries such as India,
+            which weakens the case for shifting primary responsibility away from advanced economies.
+          </figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <strong>Score: 1.5.</strong> Use per-capita emissions. Normalizing by population is a standard fairness frame and makes high individual footprints in advanced economies (esp. the U.S.)
+            visible—directly opposing the proposition.
+          </li>
+          <li>
+            <strong>Score: −1.</strong> Highlight selected countries (U.S., Germany, UK, Japan, Korea, China, India) rather than the same aggregate groups as Figure 1. 
+            Country selection focuses attention on high per-capita advanced emitters and very low-emitting developing countries; a different country set could soften that contrast.
+          </li>
+          <li>
+            <strong>Score: 1.</strong> Retain a common time window and labeled series so readers can compare levels without truncated axes. 
+            The persuasion here comes mainly from the per-person metric, not from distorting the scale.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>
+          What was straightforward was that switching the same emissions data between totals and per-capita rates was enough to flip the FOR/AGAINST stories, 
+          so I did not need a major change in chart type. In contrary,  both charts avoid inverted axes or fabricated numbers and still look “reasonable,” which made it harder to draw a clear line between persuasion and deception in writing.
+          The same underlying emissions data can support opposite conclusions depending on whether we show totals or per-capita rates, 
+          and which countries we group or highlight. Building both sides made that trade-off concrete: aggregation and metric choice moved the story more than color or chart type did.
+        </p>
+
+        <p>
+          What surprised me most was how “reasonable” each chart looks on its own. 
+          Neither uses an inverted axis or a fabricated number; both could appear in a policy brief. 
+          That made the ethical line harder to draw.
+          I now think of ethical visualization less as a single correct chart but more as honesty about framing—what was normalized, what was grouped,
+          and what alternative view was left out. Even as a reader, I need to keep considering whether there are such points.
+        </p>
+
+        <p>
+          For me, an acceptable persuasive choice still lets a careful reader recover the alternative frame (e.g., knowing totals omit population).
+          A misleading choice actively blocks that recovery—by hiding the denominator, cherry-picking a base year without saying why, or using
+          charged titles that overclaim the data. These two figures sit near that boundary.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

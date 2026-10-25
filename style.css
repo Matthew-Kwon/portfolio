@@ -141,3 +141,24 @@ main header img {
 main a {
     color: var(--color-accent);
 }
+
+.projects img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.projects h2 a,
+.projects p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.projects h2 a:hover,
+.projects p a:hover {
+    color: var(--color-accent);
+}
