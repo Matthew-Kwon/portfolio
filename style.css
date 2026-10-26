@@ -80,19 +80,26 @@ form button {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    /* title / image / description — fixed image row so large PNGs can't blow the grid */
-    grid-auto-rows: auto 12em auto;
+    /* title / image / description / year — fixed image row so large PNGs can't blow the grid */
+    grid-auto-rows: auto 12em auto auto;
     gap: 1em;
 }
 
 .projects article {
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 3;
+    grid-row: span 4;
 }
 
-.projects h2 {
+.projects h2,
+.projects h3 {
     margin: 0;
+}
+
+.projects .project-year {
+    display: block;
+    font-size: 0.9em;
+    color: color-mix(in oklch, CanvasText 65%, transparent);
 }
 
 .projects article > * {
@@ -168,3 +175,25 @@ main a {
 .projects p a:hover {
     color: var(--color-accent);
 }
+
+#profile-stats {
+    margin-block: 1em;
+}
+
+#profile-stats dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em 1em;
+    margin: 0;
+}
+
+#profile-stats dt {
+    grid-row: 1;
+    font-weight: 600;
+}
+
+#profile-stats dd {
+    grid-row: 2;
+    margin: 0;
+}
+

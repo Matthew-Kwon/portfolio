@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Persuasive or Deceptive Visualization",
+    "image": "projects/persuasive_or_deceptive_visualization/fig1_total_emissions.png",
+    "description": "Opposing visualizations on who should lead greenhouse-gas cuts, with design rationale and reflection.",
+    "year": 2025
+  },
+  {
+    "title": "Quidem maiores quia ipsa?",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Exploratory dashboard comparing regional climate indicators and communicating uncertainty with layered encodings.",
+    "year": 2024
+  },
+  {
+    "title": "Ea dolorum aperiam nobis?",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Interactive scatterplot matrix for spotting correlations across socioeconomic and health metrics.",
+    "year": 2023
+  },
+  {
+    "title": "Ad sint labore provident.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Narrative scrollytelling piece that walks readers through a public-policy dataset step by step.",
+    "year": 2022
+  },
+  {
+    "title": "Magni numquam cupiditate soluta!",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Small-multiple maps highlighting spatial patterns in transit access across a metro area.",
+    "year": 2021
+  },
+  {
+    "title": "Harum assumenda tenetur atque!",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "A/B test of chart titles and annotations to measure how framing changes interpretation.",
+    "year": 2020
+  },
+  {
+    "title": "Vitae dolores tenetur nobis.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Time-series redesign that reduces chartjunk while preserving seasonal structure in sales data.",
+    "year": 2026
+  },
+  {
+    "title": "Nobis sed laudantium est.",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Color-accessibility audit and redesign of a legacy dashboard for deuteranopia-safe palettes.",
+    "year": 2024
+  },
+  {
+    "title": "Consectetur porro repellendus enim?",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Prototype of a brushing-and-linking interface connecting a table, bar chart, and map.",
+    "year": 2023
+  },
+  {
+    "title": "Enim ipsum corporis reiciendis?",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Reusable Vega-Lite templates for recurring course assignments and client reporting workflows.",
+    "year": 2022
+  },
+  {
+    "title": "Architecto voluptates impedit quasi?",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "UCSD MDS lab exercise on encoding channels, hierarchy, and perceptual ranking of visual variables.",
+    "year": 2025
+  },
+  {
+    "title": "Temporibus nisi autem dolores?",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Portfolio refactor that moves project content into JSON and renders cards with modular JavaScript.",
+    "year": 2026
+  },
+  {
+    "title": "DSC 209R Exploratory Viz Sketch",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Course sketchbook of early chart drafts and critique notes from Data Visualization studio sessions.",
+    "year": 2025
+  }
+]
