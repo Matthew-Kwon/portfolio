@@ -80,15 +80,15 @@ form button {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    /* title / image / description / year — fixed image row so large PNGs can't blow the grid */
-    grid-auto-rows: auto 12em auto auto;
+    /* title / image / description+year — fixed image row so large PNGs can't blow the grid */
+    grid-auto-rows: auto 12em auto;
     gap: 1em;
 }
 
 .projects article {
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 4;
+    grid-row: span 3;
 }
 
 .projects h2,
@@ -98,7 +98,10 @@ form button {
 
 .projects .project-year {
     display: block;
-    font-size: 0.9em;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+    font-style: italic;
+    font-size: 0.95em;
     color: color-mix(in oklch, CanvasText 65%, transparent);
 }
 
@@ -197,3 +200,76 @@ main a {
     margin: 0;
 }
 
+
+.projects .project-info p {
+    margin-block: 0 0.25em;
+}
+
+/* Lab 5: pie chart + legend */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+
+    path {
+        transition: 300ms;
+        cursor: pointer;
+    }
+
+    &:has(path:hover) {
+        path:not(:hover) {
+            opacity: 0.5;
+        }
+    }
+}
+
+.legend {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 1em;
+    border: 1px solid oklch(80% 3% 200);
+    border-radius: 0.5em;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0;
+    cursor: pointer;
+}
+
+.legend-item em {
+    color: color-mix(in oklch, CanvasText 60%, transparent);
+}
+
+.swatch {
+    display: inline-block;
+    width: 1em;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--color);
+}
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+
+    &:is(path) {
+        fill: var(--color);
+    }
+}
+
+.searchBar {
+    margin-block: 1em 2em;
+    padding: 0.5em;
+}
