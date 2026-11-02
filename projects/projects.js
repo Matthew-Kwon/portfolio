@@ -10,17 +10,14 @@ if (titleElement && projects) {
   titleElement.textContent = `${projects.length} Projects`;
 }
 
-// Lab 5: pie chart (projects per year) + legend + search + click-to-filter
 const arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 const colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 let query = '';
 let selectedIndex = -1;
-// Selected year is tracked by label so it survives re-rendering the pie
-// (indices change whenever the search query changes the set of years).
+
 let selectedYear = null;
 
-// Filter by the search query (case-insensitive, across all project metadata)
 function filterByQuery(projectsGiven) {
   return projectsGiven.filter((project) => {
     let values = Object.values(project).join('\n').toLowerCase();
@@ -28,7 +25,6 @@ function filterByQuery(projectsGiven) {
   });
 }
 
-// Combine both filters: search query AND selected year (fixes the Step 5.4 pitfall)
 function getVisibleProjects() {
   let filtered = filterByQuery(projects);
   if (selectedYear !== null) {
@@ -38,7 +34,6 @@ function getVisibleProjects() {
 }
 
 function renderPieChart(projectsGiven) {
-  // Group projects by year and count them
   let newRolledData = d3.rollups(
     projectsGiven,
     (v) => v.length,
@@ -53,11 +48,9 @@ function renderPieChart(projectsGiven) {
   let newArcData = newSliceGenerator(newData);
   let newArcs = newArcData.map((d) => arcGenerator(d));
 
-  // Keep the selection only if that year still exists in the visible data
   selectedIndex = newData.findIndex((d) => d.label === selectedYear);
   if (selectedIndex === -1) selectedYear = null;
 
-  // Clear previous paths and legend items
   let svg = d3.select('#projects-pie-plot');
   svg.selectAll('path').remove();
   let legend = d3.select('.legend');
@@ -103,13 +96,11 @@ function renderPieChart(projectsGiven) {
   updateSelection();
 }
 
-// Render the pie chart on page load
 renderPieChart(projects);
 
 let searchInput = document.querySelector('.searchBar');
 searchInput.addEventListener('input', (event) => {
   query = event.target.value;
-  // The pie shows year stats for search results; the project list honors both filters
   renderPieChart(filterByQuery(projects));
   renderProjects(getVisibleProjects(), projectsContainer, 'h2');
 });
