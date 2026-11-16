@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching",
+    "image": "images/bikewatching.png",
+    "description": "Interactive Mapbox + D3 map of BlueBikes traffic in Boston and Cambridge (March 2024), with bike lanes, traffic-sized stations, a time-of-day filter, and departure/arrival flow colors.",
+    "year": 2026,
+    "url": "https://matthew-kwon.github.io/bikewatching/"
+  },
+  {
     "title": "Persuasive or Deceptive Visualization",
     "image": "projects/persuasive_or_deceptive_visualization/fig1_total_emissions.png",
     "description": "Opposing visualizations on who should lead greenhouse-gas cuts, with design rationale and reflection.",
