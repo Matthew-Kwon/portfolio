@@ -390,3 +390,153 @@ dl.info[hidden]:not(:hover, :focus-within) {
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
 }
+
+#time-filter {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+  gap: 1em;
+  margin-block: 1em;
+
+  label {
+    display: flex;
+    flex: 1;
+    align-items: baseline;
+    gap: 0.75em;
+  }
+
+  input[type='range'] {
+    flex: 1;
+  }
+
+  time {
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+#chart circle {
+  transition: all 200ms, r calc(var(--r) * 30ms);
+
+  @starting-style {
+    r: 0;
+  }
+}
+
+#files {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+  margin: 0;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+    margin: 0;
+    padding-top: 0.4em;
+  }
+
+  dt code {
+    overflow-wrap: anywhere;
+    font-size: 0.85em;
+  }
+
+  dt small {
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.6;
+  }
+
+  dd {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin-left: 0;
+  }
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
+.tech-legend {
+  display: flex;
+  gap: 1.5em;
+  margin-block: 0 0.75em;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+
+  dt,
+  dd {
+    margin: 0;
+  }
+
+  .loc {
+    width: 0.8em;
+  }
+}
+
+#scrolly-1,
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story,
+#files-story {
+  position: relative;
+}
+
+#scatter-plot,
+#files-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+#scatter-plot {
+  padding-top: 1em;
+}
+
+#files-plot {
+  height: auto;
+  max-height: 100vh;
+  overflow: hidden;
+  padding-top: 1em;
+}
+
+#files-story {
+  flex: 0 0 30%;
+}
+
+#files-plot {
+  flex: 1;
+}
+
+.step {
+  padding-bottom: 60vh;
+  line-height: 1.5;
+}
